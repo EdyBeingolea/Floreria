@@ -1,6 +1,7 @@
 import 'package:floreria_proyect/presentation/widgets/LinkTextButton_widgets.dart';
 import 'package:floreria_proyect/presentation/widgets/botoom_widgets.dart';
 import 'package:floreria_proyect/presentation/widgets/field_widgets.dart';
+import 'package:floreria_proyect/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreens extends StatefulWidget {
@@ -126,7 +127,14 @@ class _LoginScreensState extends State<LoginScreens> {
                               const SizedBox(height: 18),
                               CustomButton(
                                 text: "Ingresar",
-                                onPressed: () {},
+                                onPressed: () {
+                                  if (_formKey.currentState!.validate()) {
+                                    Navigator.pushReplacementNamed(
+                                      context,
+                                      AppRoutes.main,
+                                    );
+                                  }
+                                },
                                 color: Colors.blue.shade700,
                                 radius: 14,
                                 vertical: 14,
